@@ -1,0 +1,28 @@
+<h1>HOST LIST</h1>
+<table border="1">
+  <tr>
+    <th>id</th>
+    <th>hostname</th>
+    <th>hostclass</th>
+    <th>os</th>
+    <th>cpu_num</th>
+    <th>cpu_model</th>
+    <th>memory</th>
+    <th>ipaddress</th>
+    <th>subnet</th>
+
+  </tr>
+  <% @hosts.each do |host| %>
+  <tr>
+    <td><%= host.id %></td>
+    <td><a href =  '/hosts/<%= host.id %>'><%= host.hostname %> </a></td>
+    <td><%= host.hostclass %></td>
+    <td><%= host.os %></td>
+    <td><%= host.cpu_num %></td>
+    <td><%= host.cpu_model %></td>
+    <td><%= host.memory %></td>
+    <td><%= host.ipaddress %></td>
+    <td><%= host.subnet %></td>
+  </tr>
+  <% end %>
+</table>

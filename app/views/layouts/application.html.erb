@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Example</title>
+  <title>HOST DB</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "http://yui.yahooapis.com/pure/0.3.0/pure-min.css" %>
+  <%= stylesheet_link_tag "style" %>
+  <%= stylesheet_link_tag "nav" %>
 </head>
 <body>
 
 <%= yield %>
+
+<div class="menu">
+<a href="/hosts/show"><button class="pure-button pure-button-small">Host List</button></a>
+</div>
+
 
 </body>
 </html>

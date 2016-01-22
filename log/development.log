@@ -4,3 +4,819 @@ Started GET "/" for 192.168.1.5 at 2016-01-22 00:22:40 +0900
 Processing by Rails::WelcomeController#index as HTML
   Rendered vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/templates/rails/welcome/index.html.erb (1.2ms)
 Completed 200 OK in 21ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 192.168.1.5 at 2016-01-22 00:40:55 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendered vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/templates/rails/welcome/index.html.erb (1.2ms)
+Completed 200 OK in 19ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 192.168.1.5 at 2016-01-23 01:02:24 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendered vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/templates/rails/welcome/index.html.erb (1.1ms)
+Completed 200 OK in 19ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (10.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (10.3ms)[0m  select sqlite_version(*)
+  [1m[36m (2.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateHosts (20160122161652)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "hosts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "hostname" varchar(255), "hostclass" varchar(255), "os" varchar(255), "cpu_num" integer, "cpu_model" varchar(255), "memory" varchar(255), "ipaddress" varchar(255), "subnet" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160122161652"]]
+  [1m[35m (6.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/hosts/show" for 192.168.1.5 at 2016-01-23 01:31:37 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HostsController#show as HTML
+  Rendered hosts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 415ms (Views: 414.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.1.5 at 2016-01-23 01:31:37 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.1.5 at 2016-01-23 01:31:37 +0900
+
+
+Started GET "/assets/hosts.css?body=1" for 192.168.1.5 at 2016-01-23 01:31:37 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.1.5 at 2016-01-23 01:31:37 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.1.5 at 2016-01-23 01:31:37 +0900
+
+
+Started GET "/assets/hosts.js?body=1" for 192.168.1.5 at 2016-01-23 01:31:37 +0900
+
+
+Started GET "/assets/application.js?body=1" for 192.168.1.5 at 2016-01-23 01:31:37 +0900
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "hosts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "hosts" ("hostname", "hostclass", "os", "cpu_num", "cpu_model", "memory", "ipaddress", "subnet", "created_at", "updated_at", "id") VALUES ('hostname1', 'hostclass1', 'os1', 1, 'cpu_model1', 'memory1', 'ip1', 'subnet1', '2016-01-22 16:38:32', '2016-01-22 16:38:32', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "hosts" ("hostname", "hostclass", "os", "cpu_num", "cpu_model", "memory", "ipaddress", "subnet", "created_at", "updated_at", "id") VALUES ('hostname2', 'hostclass2', 'os2', 2, 'cpu_model2', 'memery2', 'ip2', 'subnet2', '2016-01-22 16:38:32', '2016-01-22 16:38:32', 298486374)
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/hosts/show" for 192.168.1.5 at 2016-01-23 01:39:44 +0900
+Processing by HostsController#show as HTML
+  Rendered hosts/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 43ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 192.168.1.5 at 2016-01-23 01:39:44 +0900
+
+
+Started GET "/assets/hosts.js?body=1" for 192.168.1.5 at 2016-01-23 01:39:44 +0900
+
+
+Started GET "/hosts/show" for 192.168.1.5 at 2016-01-23 01:47:08 +0900
+Processing by HostsController#show as HTML
+  [1m[35mHost Load (0.3ms)[0m  SELECT "hosts".* FROM "hosts"
+  Rendered hosts/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 192.168.1.5 at 2016-01-23 01:47:08 +0900
+
+
+Started GET "/assets/hosts.css?body=1" for 192.168.1.5 at 2016-01-23 01:47:08 +0900
+
+
+Started GET "/hosts/show" for 192.168.1.5 at 2016-01-23 01:51:00 +0900
+Processing by HostsController#show as HTML
+  [1m[36mHost Load (0.2ms)[0m  [1mSELECT "hosts".* FROM "hosts"[0m
+  Rendered hosts/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 192.168.1.5 at 2016-01-23 01:51:00 +0900
+
+
+Started GET "/assets/hosts.js?body=1" for 192.168.1.5 at 2016-01-23 01:51:00 +0900
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 01:51:02 +0900
+
+ActionController::RoutingError (No route matches [GET] "/hosts/298486374"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/sendfile.rb:112:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/engine.rb:514:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/application.rb:144:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/handler/webrick.rb:60:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (92.0ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 01:51:02 +0900
+
+ActionController::RoutingError (No route matches [GET] "/hosts/298486374"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/sendfile.rb:112:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/engine.rb:514:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/application.rb:144:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/handler/webrick.rb:60:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (11.3ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 01:51:13 +0900
+
+ActionController::RoutingError (No route matches [GET] "/hosts/298486374"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/sendfile.rb:112:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/engine.rb:514:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/application.rb:144:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/handler/webrick.rb:60:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (11.3ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 01:51:13 +0900
+
+ActionController::RoutingError (No route matches [GET] "/hosts/298486374"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/sendfile.rb:112:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/engine.rb:514:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/application.rb:144:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/handler/webrick.rb:60:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (11.0ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 01:51:23 +0900
+
+ActionController::RoutingError (No route matches [GET] "/hosts/298486374"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/sendfile.rb:112:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/engine.rb:514:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/application.rb:144:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/handler/webrick.rb:60:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (11.3ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 01:51:23 +0900
+
+ActionController::RoutingError (No route matches [GET] "/hosts/298486374"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/sendfile.rb:112:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/engine.rb:514:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/application.rb:144:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/handler/webrick.rb:60:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (11.0ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 01:53:41 +0900
+
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.9ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 01:55:11 +0900
+
+AbstractController::ActionNotFound (The action 'detail' could not be found for HostsController):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/abstract_controller/base.rb:131:in `process'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.1.1/lib/action_view/rendering.rb:30:in `process'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal.rb:195:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal.rb:231:in `block in action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/routing/route_set.rb:80:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/routing/route_set.rb:48:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/journey/router.rb:71:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/journey/router.rb:59:in `each'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/journey/router.rb:59:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/routing/route_set.rb:676:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/etag.rb:23:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/conditionalget.rb:25:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/head.rb:11:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/flash.rb:254:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/session/abstract/id.rb:225:in `context'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/session/abstract/id.rb:220:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.1.1/lib/active_record/query_cache.rb:36:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.1.1/lib/active_record/migration.rb:380:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:82:in `run_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/sendfile.rb:112:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/engine.rb:514:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/application.rb:144:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/handler/webrick.rb:60:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 01:56:38 +0900
+Processing by HostsController#detail as HTML
+  Parameters: {"id"=>"298486374"}
+Completed 500 Internal Server Error in 1ms
+
+NameError (uninitialized constant HostsController::Line):
+  app/controllers/hosts_controller.rb:7:in `detail'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.9ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 01:57:12 +0900
+Processing by HostsController#detail as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mHost Load (0.2ms)[0m  SELECT  "hosts".* FROM "hosts"  WHERE "hosts"."id" = ? LIMIT 1  [["id", 298486374]]
+Completed 500 Internal Server Error in 4ms
+
+ActionView::MissingTemplate (Missing template hosts/detail, application/detail with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/root/rails/kazutan-app/app/views"
+):
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.1.1/lib/action_view/path_set.rb:46:in `find'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.1.1/lib/action_view/lookup_context.rb:124:in `find'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.1.1/lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.1.1/lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.1.1/lib/action_view/renderer/template_renderer.rb:8:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.1.1/lib/action_view/renderer/renderer.rb:42:in `render_template'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.1.1/lib/action_view/renderer/renderer.rb:23:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.1.1/lib/action_view/rendering.rb:99:in `_render_template'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.1.1/lib/action_view/rendering.rb:82:in `render_to_body'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/abstract_controller/rendering.rb:25:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/rendering.rb:16:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.1.1/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/instrumentation.rb:40:in `render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/abstract_controller/base.rb:189:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:113:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:229:in `block in halting'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:229:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:229:in `block in halting'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:166:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:166:in `block in halting'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:166:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:166:in `block in halting'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:166:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:166:in `block in halting'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:86:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:86:in `run_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/abstract_controller/callbacks.rb:19:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/notifications.rb:159:in `block in instrument'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/notifications.rb:159:in `instrument'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.1.1/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/abstract_controller/base.rb:136:in `process'
+  vendor/bundle/ruby/2.2.0/gems/actionview-4.1.1/lib/action_view/rendering.rb:30:in `process'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal.rb:195:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_controller/metal.rb:231:in `block in action'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/routing/route_set.rb:80:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/routing/route_set.rb:48:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/journey/router.rb:71:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/journey/router.rb:59:in `each'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/journey/router.rb:59:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/routing/route_set.rb:676:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/etag.rb:23:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/conditionalget.rb:25:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/head.rb:11:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/flash.rb:254:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/session/abstract/id.rb:225:in `context'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/session/abstract/id.rb:220:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.1.1/lib/active_record/query_cache.rb:36:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activerecord-4.1.1/lib/active_record/migration.rb:380:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/callbacks.rb:82:in `run_callbacks'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/sendfile.rb:112:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/engine.rb:514:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/application.rb:144:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/handler/webrick.rb:60:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.5ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 01:58:56 +0900
+Processing by HostsController#detail as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mHost Load (0.1ms)[0m  [1mSELECT  "hosts".* FROM "hosts"  WHERE "hosts"."id" = ? LIMIT 1[0m  [["id", 298486374]]
+  Rendered hosts/detail.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    12:     <th>subnet</th>
+    13: 
+    14:   </tr>
+    15:   <% @hosts.each do |host| %>
+    16:   <tr>
+    17:     <td><%= host.id %></td>
+    18:     <td><a href =  '/hosts/<%= host.id %>'><%= host.hostname %> </a></td>
+  app/views/hosts/detail.html.erb:15:in `_app_views_hosts_detail_html_erb__4027709000927079998_70272478495040'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.4ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 02:03:52 +0900
+Processing by HostsController#detail as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mHost Load (0.2ms)[0m  SELECT  "hosts".* FROM "hosts"  WHERE "hosts"."id" = ? LIMIT 1  [["id", 298486374]]
+  Rendered hosts/detail.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (undefined local variable or method `host' for #<#<Class:0x007fd32c55f990>:0x007fd32c185478>):
+    11: 		    <tbody>
+    12: 		        <tr>
+    13: 		            <td>ID</td>
+    14:                             <td><%= host.id %></td>
+    15: 		        </tr>
+    16:                         <tr>
+    17:                             <td>HOSTNAME</td>
+  app/views/hosts/detail.html.erb:14:in `_app_views_hosts_detail_html_erb__4027709000927079998_70272477290340'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.4ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 02:05:23 +0900
+Processing by HostsController#detail as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mHost Load (0.1ms)[0m  [1mSELECT  "hosts".* FROM "hosts"  WHERE "hosts"."id" = ? LIMIT 1[0m  [["id", 298486374]]
+  Rendered hosts/detail.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined local variable or method `host' for #<#<Class:0x007fd343e8fb20>:0x007fd343e8f170>):
+    11: 		    <tbody>
+    12: 		        <tr>
+    13: 		            <td>ID</td>
+    14:                             <td><%= host.id %></td>
+    15: 		        </tr>
+    16:                         <tr>
+    17:                             <td>HOSTNAME</td>
+  app/views/hosts/detail.html.erb:14:in `_app_views_hosts_detail_html_erb__4027709000927079998_70272477290340'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.5ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 02:05:25 +0900
+Processing by HostsController#detail as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mHost Load (0.1ms)[0m  SELECT  "hosts".* FROM "hosts"  WHERE "hosts"."id" = ? LIMIT 1  [["id", 298486374]]
+  Rendered hosts/detail.html.erb within layouts/application (33.1ms)
+Completed 500 Internal Server Error in 35ms
+
+ActionView::Template::Error (undefined local variable or method `host' for #<#<Class:0x007fd343e8fb20>:0x007fd343c435b0>):
+    11: 		    <tbody>
+    12: 		        <tr>
+    13: 		            <td>ID</td>
+    14:                             <td><%= host.id %></td>
+    15: 		        </tr>
+    16:                         <tr>
+    17:                             <td>HOSTNAME</td>
+  app/views/hosts/detail.html.erb:14:in `_app_views_hosts_detail_html_erb__4027709000927079998_70272477290340'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.0ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 02:08:00 +0900
+Processing by HostsController#detail as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mHost Load (0.1ms)[0m  [1mSELECT  "hosts".* FROM "hosts"  WHERE "hosts"."id" = ? LIMIT 1[0m  [["id", 298486374]]
+  Rendered hosts/detail.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.1.5 at 2016-01-23 02:08:00 +0900
+
+
+Started GET "/assets/hosts.js?body=1" for 192.168.1.5 at 2016-01-23 02:08:00 +0900
+
+
+Started GET "/assets/hosts.css?body=1" for 192.168.1.5 at 2016-01-23 02:08:00 +0900
+
+
+Started GET "/assets/hosts.js?body=1" for 192.168.1.5 at 2016-01-23 02:08:00 +0900
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 02:09:17 +0900
+Processing by HostsController#detail as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mHost Load (0.1ms)[0m  SELECT  "hosts".* FROM "hosts"  WHERE "hosts"."id" = ? LIMIT 1  [["id", 298486374]]
+  Rendered hosts/detail.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.1.5 at 2016-01-23 02:09:17 +0900
+
+
+Started GET "/assets/hosts.js?body=1" for 192.168.1.5 at 2016-01-23 02:09:17 +0900
+
+
+Started GET "/assets/hosts.css?body=1" for 192.168.1.5 at 2016-01-23 02:09:17 +0900
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 02:11:26 +0900
+Processing by HostsController#detail as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mHost Load (0.1ms)[0m  [1mSELECT  "hosts".* FROM "hosts"  WHERE "hosts"."id" = ? LIMIT 1[0m  [["id", 298486374]]
+  Rendered hosts/detail.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.1.5 at 2016-01-23 02:11:26 +0900
+
+
+Started GET "/assets/hosts.js?body=1" for 192.168.1.5 at 2016-01-23 02:11:26 +0900
+
+
+Started GET "/assets/hosts.css?body=1" for 192.168.1.5 at 2016-01-23 02:11:26 +0900
+
+
+Started GET "/hosts" for 192.168.1.5 at 2016-01-23 02:11:29 +0900
+
+ActionController::RoutingError (No route matches [GET] "/hosts"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/sendfile.rb:112:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/engine.rb:514:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/application.rb:144:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/handler/webrick.rb:60:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (11.7ms)
+
+
+Started GET "/hosts/show" for 192.168.1.5 at 2016-01-23 02:11:35 +0900
+Processing by HostsController#show as HTML
+  [1m[35mHost Load (0.2ms)[0m  SELECT "hosts".* FROM "hosts"
+  Rendered hosts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 192.168.1.5 at 2016-01-23 02:11:35 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.1.5 at 2016-01-23 02:11:35 +0900
+
+
+Started GET "/assets/hosts.js?body=1" for 192.168.1.5 at 2016-01-23 02:11:35 +0900
+
+
+Started GET "/hosts/980190962" for 192.168.1.5 at 2016-01-23 02:11:38 +0900
+Processing by HostsController#detail as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mHost Load (0.1ms)[0m  [1mSELECT  "hosts".* FROM "hosts"  WHERE "hosts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  Rendered hosts/detail.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/hosts/298486374" for 192.168.1.5 at 2016-01-23 02:11:40 +0900
+Processing by HostsController#detail as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mHost Load (0.1ms)[0m  SELECT  "hosts".* FROM "hosts"  WHERE "hosts"."id" = ? LIMIT 1  [["id", 298486374]]
+  Rendered hosts/detail.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/hosts/980190962" for 192.168.1.5 at 2016-01-23 02:12:10 +0900
+Processing by HostsController#detail as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mHost Load (0.2ms)[0m  [1mSELECT  "hosts".* FROM "hosts"  WHERE "hosts"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  Rendered hosts/detail.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/hosts/show" for 192.168.1.5 at 2016-01-23 02:16:41 +0900
+Processing by HostsController#show as HTML
+  [1m[35mHost Load (0.2ms)[0m  SELECT "hosts".* FROM "hosts"
+  Rendered hosts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 192.168.1.5 at 2016-01-23 02:16:41 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.1.5 at 2016-01-23 02:16:41 +0900
+
+
+Started GET "/assets/hosts.js?body=1" for 192.168.1.5 at 2016-01-23 02:16:41 +0900
+
+
+Started GET "/stylesheets/style.css" for 192.168.1.5 at 2016-01-23 02:16:41 +0900
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/style.css"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/sendfile.rb:112:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/engine.rb:514:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/application.rb:144:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/handler/webrick.rb:60:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (12.8ms)
+
+
+Started GET "/stylesheets/nav.css" for 192.168.1.5 at 2016-01-23 02:16:41 +0900
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/nav.css"):
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/rack/logger.rb:20:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/methodoverride.rb:21:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/runtime.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/activesupport-4.1.1/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/sendfile.rb:112:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/engine.rb:514:in `call'
+  vendor/bundle/ruby/2.2.0/gems/railties-4.1.1/lib/rails/application.rb:144:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/lock.rb:17:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/content_length.rb:14:in `call'
+  vendor/bundle/ruby/2.2.0/gems/rack-1.5.5/lib/rack/handler/webrick.rb:60:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /root/.rbenv/versions/2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered vendor/bundle/ruby/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (11.6ms)
+
+
+Started GET "/hosts/show" for 192.168.1.5 at 2016-01-23 02:16:56 +0900
+Processing by HostsController#show as HTML
+  [1m[36mHost Load (0.2ms)[0m  [1mSELECT "hosts".* FROM "hosts"[0m
+  Rendered hosts/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/hosts/show" for 192.168.1.5 at 2016-01-23 02:16:56 +0900
+Processing by HostsController#show as HTML
+  [1m[35mHost Load (0.1ms)[0m  SELECT "hosts".* FROM "hosts"
+  Rendered hosts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 39ms (Views: 38.8ms | ActiveRecord: 0.1ms)
