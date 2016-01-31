@@ -10,19 +10,25 @@
     <th>memory</th>
     <th>ipaddress</th>
     <th>subnet</th>
+    <th>edit</th>
+    <th>destroy</th>
 
   </tr>
   <% @hosts.each do |host| %>
   <tr>
     <td><%= host.id %></td>
     <td><a href =  '/hosts/<%= host.id %>'><%= host.hostname %> </a></td>
-    <td><%= host.hostclass %></td>
+    <td><a href =  '/hosts/hostclass/<%= host.hostclass %>/search'> <%= host.hostclass %>  </a> </td>
     <td><%= host.os %></td>
     <td><%= host.cpu_num %></td>
     <td><%= host.cpu_model %></td>
     <td><%= host.memory %></td>
     <td><%= host.ipaddress %></td>
     <td><%= host.subnet %></td>
+    <td><a href =  '/hosts/<%= host.id %>/edit'> edit </a></td>
+    <td><a href =  '/hosts/<%= host.id %>/destroy'> destroy </a></td>
   </tr>
   <% end %>
 </table>
+
+

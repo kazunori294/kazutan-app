@@ -1,0 +1,48 @@
+<%= form_for @host,:url=>{:action => :update} do |f| %>
+
+  <%= f.label :id %>
+  <%= f.text_field :id ,:readonly => true  %>
+
+  <br>
+
+  <%= f.label :hostname %> 
+  <%= f.text_field :hostname %><br>
+
+  <br>
+
+  <%= f.label :hostclass %>
+  <%= f.text_field :hostclass %><br>
+
+  <br>
+
+  <%= f.label :os %>
+  <%= f.text_field :os %><br>
+
+  <br>
+
+  <%= f.label :cpu_num %>
+  <%= f.text_field :cpu_num %><br>
+
+  <br>
+
+  <%= f.label :cpu_model %>
+  <%= f.text_field :cpu_model %><br>
+
+  <br>
+
+  <%= f.label :memory %>
+  <%= f.text_field :memory %><br>
+
+  <br>
+
+  <%= f.label :ipaddress %>
+  <%= f.text_field :ipaddress %><br>
+
+  <br>
+
+  <%= f.label :subnet %>
+  <%= f.text_field :subnet %><br>
+
+  <%= f.submit %>
+
+<% end %>

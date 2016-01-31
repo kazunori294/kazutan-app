@@ -1,6 +1,29 @@
 Rails.application.routes.draw do
   get 'hosts/show'
+  get 'hosts/new'
   get 'hosts/:id' => 'hosts#detail'
+  get 'hosts/:id/edit' => 'hosts#edit'
+  patch 'hosts/update' => 'hosts#update'
+  post 'hosts/create' => 'hosts#create'
+  get 'hosts/:id/destroy' => 'hosts#destroy'
+  get 'hosts/:id/destroy' => 'hosts#destroy'
+  get 'hosts/hostclass/:hostclass/search' => 'hosts#searchHostclass'
+
+
+#  namespace :api, { format: 'json' } do
+  namespace :api do
+    resources :hosts
+     get 'hosts/update/:ip/ipaddress' => 'hosts#updateIpaddress', ip: /[^\/]+/
+     get 'hosts/update/:ip/ip/:new/hostname' => 'hosts#updateHostname', new: /[^\/]+/, ip: /[^\/]+/
+     get 'hosts/update/:ip/ip/:new/hostclass' => 'hosts#updateHostclass', new: /[^\/]+/, ip: /[^\/]+/
+     get 'hosts/update/:ip/ip/:new/os' => 'hosts#updateOs', new: /[^\/]+/, ip: /[^\/]+/
+     get 'hosts/update/:ip/ip/:new/cpu_num' => 'hosts#updateCpu_num', new: /[^\/]+/, ip: /[^\/]+/
+     get 'hosts/update/:ip/ip/:new/cpu_model' => 'hosts#updateCpu_model', new: /[^\/]+/, ip: /[^\/]+/
+     get 'hosts/update/:ip/ip/:new/memory' => 'hosts#updateMemory', new: /[^\/]+/, ip: /[^\/]+/
+     get 'hosts/update/:ip/ip/:new/subnet' => 'hosts#updateSubnet', new: /[^\/]+/, ip: /[^\/]+/
+  end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
